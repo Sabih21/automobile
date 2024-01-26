@@ -1,9 +1,9 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-theme-light elevation-4">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a href="{{route('dashboard')}}" class="brand-link">
       <img src="/images/logo.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            >
-      <span class="brand-text font-weight-solid">Mehak Automotive</span>
+      <span class="brand-text font-weight-solid" style="color: rgb(230, 36, 36); font-weight: bold">Mehak Automotive</span>
     </a>
 
     <!-- Sidebar -->
@@ -11,10 +11,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="{{asset('/images/user.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{ auth()->user()->name }}</a>
+          <a href="#" class="d-block" style="color: rgb(228, 38, 38); font-weight: bold" >{{ auth()->user()->name }}</a>
         </div>
       </div>
       <!-- Sidebar Menu -->
@@ -23,7 +23,7 @@
       <!-- Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library -->
       <li class="nav-item has-treeview menu-open">
-        <a href="#" class="nav-link active">
+        <a href="#" class="nav-link active" style="background: rgb(228, 36, 36)">
           <i class="nav-icon fas fa-tachometer-alt"></i>
           <p>
             Dashboard
@@ -32,13 +32,29 @@
         </a>
        
       </li>
-      <li class="nav-item">
-        <a href="pages/widgets.html" class="nav-link">
-          <i class="nav-icon fas fa-th"></i>
+      <li class="nav-item has-treeview">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fas fa-user"></i>
           <p>
-            Stock
+            Employee
+            <i class="fas fa-angle-left right"></i>
           </p>
         </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="{{route('employe.index')}}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Employees Data</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('employe.create')}}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Add Employees</p>
+            </a>
+          </li>
+           
+        </ul>
       </li>
       <li class="nav-item has-treeview">
         <a href="#" class="nav-link">
@@ -50,46 +66,16 @@
           </p>
         </a>
         <ul class="nav nav-treeview">
-          <li class="nav-item">
+          <li class="nav-item"> 
             <a href="pages/layout/top-nav.html" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Top Navigation</p>
+              <p>Total Sales</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Top Navigation + Sidebar</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="pages/layout/boxed.html" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Boxed</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="pages/layout/fixed-sidebar.html" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Fixed Sidebar</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="pages/layout/fixed-topnav.html" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Fixed Navbar</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="pages/layout/fixed-footer.html" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Fixed Footer</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Collapsed Sidebar</p>
+              <p>Add Sales</p>
             </a>
           </li>
         </ul>
@@ -217,35 +203,7 @@
           </li>
         </ul>
       </li>
-      <li class="nav-item has-treeview">
-        <a href="#" class="nav-link">
-          <i class="nav-icon fas fa-table"></i>
-          <p>
-            Staff
-            <i class="fas fa-angle-left right"></i>
-          </p>
-        </a>
-        <ul class="nav nav-treeview">
-          <li class="nav-item">
-            <a href="pages/tables/simple.html" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Simple Tables</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="pages/tables/data.html" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>DataTables</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="pages/tables/jsgrid.html" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>jsGrid</p>
-            </a>
-          </li>
-        </ul>
-      </li>
+      
       <li class="nav-header">Finance</li>
       <li class="nav-item">
         <a href="pages/calendar.html" class="nav-link">
