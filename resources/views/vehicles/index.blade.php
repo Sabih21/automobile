@@ -82,7 +82,7 @@
                     <a href="{{ route('vehicles.edit', ['id' => $vehicle->VehicleID]) }}" class="btn btn-primary">Edit</a>
 
                        <!-- Delete Button -->
-          <form action="{{ route('vehicles.destroy', ['id   ' => $vehicle->VehicleID]) }}" method="post" style="display:inline;">
+          <form action="{{ route('vehicles.destroy', ['id' => $vehicle->VehicleID]) }}" method="post" style="display:inline;">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Delete</button>
@@ -107,4 +107,4 @@
     </div>
 </div>
 
-@endsection
+@endsection         
