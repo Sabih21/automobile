@@ -44,7 +44,7 @@ Route::middleware('auth')->group(function () {
     //Vehicle Route ::
 
 // Display a listing of the vehicles
-Route::get('/vehicles', [VehicleController::class, 'index'])->name('vehicles.index');
+Route::get('/vehicles', [VehicleController::class, 'show'])->name('vehicles.show');
 
 // Show the form for creating a new vehicle
 Route::get('/vehicles/create', [VehicleController::class, 'create'])->name('vehicles.create');
@@ -53,7 +53,7 @@ Route::get('/vehicles/create', [VehicleController::class, 'create'])->name('vehi
 Route::post('/vehicles', [VehicleController::class, 'store'])->name('vehicles.store');
 
 // Display the specified vehicle
-Route::get('/vehicles/show', [VehicleController::class, 'show'])->name('vehicles.show');
+Route::get('/vehicles/show', [VehicleController::class, 'index'])->name('vehicles.index');
 
 // Show the form for editing the specified vehicle
 Route::get('/vehicles/{id}/edit', [VehicleController::class, 'edit'])->name('vehicles.edit');
