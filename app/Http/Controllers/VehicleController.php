@@ -60,7 +60,7 @@ class VehicleController extends Controller
             foreach ($request->file('images') as $image) {
                 $path = $image->store('vehicle_images', 'custom'); // Use the appropriate disk name from filesystem.php
 
-                // Save image in vehicle_images table
+               
                 VehicleImage::create([
                     'vehicle_id' => $vehicle->VehicleID,
                     'image_path' => $path,
@@ -107,7 +107,25 @@ class VehicleController extends Controller
      
          return redirect()->route('vehicles.index')->with('success', 'Vehicle updated successfully');
      }
+       
+     public function show()
+     {
+         // Fetch all vehicles
+         $vehicles = Vehicle::all();
      
+         // Eager load images to avoid N+1 problem
+         $vehicles->load('images');
+     
+         return view('vehicles.show', compact('vehicles'));
+     }
+    
+     public function detail($id): View
+     {
+         $vehicle = Vehicle::findOrFail($id);
+         $images = $vehicle->images; 
+
+         return view('vehicles.detail', compact('vehicle' ,'images'));
+     }
  
      public function destroy($id)
      {
@@ -120,23 +138,5 @@ class VehicleController extends Controller
              ->with('success', 'Vehicle deleted successfully');
      }
 
-     
-        public function show()
-        {
-            // Fetch all vehicles
-            $vehicles = Vehicle::all();
-        
-            // Eager load images to avoid N+1 problem
-            $vehicles->load('images');
-        
-            return view('vehicles.show', compact('vehicles'));
-        }
-       
-        public function detail($id): View
-        {
-            $vehicle = Vehicle::findOrFail($id);
-            $images = $vehicle->images; 
-
-            return view('vehicles.detail', compact('vehicle' ,'images'));
-        }
+   
 };

@@ -8,7 +8,7 @@ use App\Models\User;
 
 // use App\Http\Controllers\Users;
 
-class EmployeController extends Controller 
+class EmployeController extends Controller
 {
     public function index(){
         $users = User::latest()->get();

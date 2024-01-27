@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <div class="row justify-content-center align-items-center">
           <div class="col-sm-8 text-center my-auto">
-            <h1>Add Vehicles</h1>
+            <h1>Add Employees</h1>
           </div>
           
         </div>
@@ -24,7 +24,7 @@
             <!-- general form elements -->
             <div class="card card-danger">
               <div class="card-header">
-                <h3 class="card-title">Add Vehicle</h3>
+                <h3 class="card-title">Add Employees</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
