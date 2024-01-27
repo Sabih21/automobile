@@ -69,7 +69,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ url('vehicles/show') }}" class="nav-link">
+                            <a href="{{ route('vehicles.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>All Vehicles</p>
                             </a>
@@ -81,7 +81,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('vehicles.index') }}" class="nav-link">
+                            <a href="{{ route('vehicles.show') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Vehicles Information</p>
                             </a>
