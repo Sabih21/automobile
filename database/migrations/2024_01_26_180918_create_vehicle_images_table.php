@@ -11,9 +11,10 @@ class CreateVehicleImagesTable extends Migration
         Schema::create('vehicle_images', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('vehicle_id');
-            $table->foreign('vehicle_id')->references('VehicleID')->on('vehicles');
+            $table->foreign('vehicle_id')->references('VehicleID')->on('vehicles')->onDelete('cascade');
             $table->string('image_path');
-            $table->string('status');
+            // $table->string('status');
+            $table->boolean('status');
             $table->timestamps();
         });
     }

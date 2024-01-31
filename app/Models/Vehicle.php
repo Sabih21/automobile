@@ -18,18 +18,18 @@ class Vehicle extends Model
         'Model',
         'Year',
         'Color',
-        'VIN',
+        'Registration',
         'Amount',
         'LicensePlate',
-        'PurchaseDate',
-        'PurchasePrice',
+        'Chassis',
+        // 'PurchasePrice',
         'CurrentValue',
         'Condition',
         'FuelType',
         'Mileage',
         'EngineNumber',
-        'Transmission',
-        'ManufacturerID',
+        'Membership',
+        'Detail_description',
     ];
 
 

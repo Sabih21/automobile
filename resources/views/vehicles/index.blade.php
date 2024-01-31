@@ -34,18 +34,16 @@
           <th>Model</th>
           <th>Year</th>
           <th>Color</th>
-          <th>VIN</th>
+          <th>Registration</th>
           <th>Amount</th>
           <th>License Plate</th>
-          <th>Purchase Data</th>
-          <th>Purchase Price</th>
-          <th>Current Value</th>
+          <th>Chassis</th>
           <th>Condition</th>
           <th>Fuel Type</th>
           <th>Mileage</th>
           <th>Engine Number</th>
-          <th>Transmission</th>
-          <th>Manufacture ID</th>
+          <th>Membership</th>
+          <th>Detail Description</th>
           <th>Image</th>
           <th>Action</th>
 
@@ -61,18 +59,16 @@
                   <td>{{ $vehicle->Model }}</td>
                   <td>{{ $vehicle->Year }}</td>
                   <td>{{ $vehicle->Color }}</td>
-                  <td>{{ $vehicle->VIN }}</td>
+                  <td>{{ $vehicle->Registration }}</td>
                   <td>{{ $vehicle->Amount }}</td>
                   <td>{{ $vehicle->LicensePlate }}</td>
-                  <td>{{ $vehicle->PurchaseDate }}</td>
-                  <td>{{ $vehicle->PurchasePrice }}</td>
-                  <td>{{ $vehicle->CurrentValue }}</td>
+                  <td>{{ $vehicle->Chassis}}</td>
                   <td>{{ $vehicle->Condition }}</td>
                   <td>{{ $vehicle->FuelType }}</td>
                   <td>{{ $vehicle->Mileage }}</td>
                   <td>{{ $vehicle->EngineNumber }}</td>
-                  <td>{{ $vehicle->Transmission }}</td>
-                  <td>{{ $vehicle->ManufacturerID }}</td>
+                  <td>{{ $vehicle->Membership }}</td> 
+                  <td>{{ $vehicle->Detail_description }}</td>
                   <td>
                     @foreach ($vehicle->images as $image)
                         <img src="{{ asset('storage/' . $image->image_path) }}" alt="Vehicle Image" style="max-width: 100px; max-height: 100px;">

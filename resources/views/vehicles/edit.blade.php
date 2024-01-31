@@ -59,9 +59,9 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="VIN">VIN:</label>
-                                                <input type="text" name="VIN" class="form-control"
-                                                    value="{{ $vehicle->VIN }}" required>
+                                                <label for="Registration">Registration:</label>
+                                                <input type="text" name="Registration" class="form-control"
+                                                    value="{{ $vehicle->Registration }}" required>
                                             </div>
 
                                             <div class="form-group">
@@ -77,25 +77,25 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="PurchaseDate">Purchase Date:</label>
-                                                <input type="date" name="PurchaseDate" class="form-control"
-                                                    value="{{ $vehicle->PurchaseDate }}" required>
+                                                <label for="chasis">Chassis:</label>
+                                                <input type="text" name="Chassis" class="form-control"
+                                                    value="{{ $vehicle->Chassis }}" required>
                                             </div>
 
                                         </div>
 
                                         <div class="col-md-6">
-                                            <div class="form-group">
+                                            {{-- <div class="form-group">
                                                 <label for="PurchasePrice">Purchase Price:</label>
                                                 <input type="number" name="PurchasePrice" class="form-control"
                                                     value="{{ $vehicle->PurchasePrice }}" required>
-                                            </div>
+                                            </div> --}}
 
-                                            <div class="form-group">
+                                            {{-- <div class="form-group">
                                                 <label for="CurrentValue">Current Value:</label>
                                                 <input type="text" name="CurrentValue" class="form-control"
                                                     value="{{ $vehicle->CurrentValue }}" required>
-                                            </div>
+                                            </div> --}}
 
                                             <div class="form-group">
                                                 <label for="Condition">Condition:</label>
@@ -122,15 +122,15 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="Transmission">Transmission:</label>
-                                                <input type="text" name="Transmission" class="form-control"
-                                                    value="{{ $vehicle->Transmission }}" required>
+                                                <label for="Membership">Membership:</label>
+                                                <input type="text" name="Membership" class="form-control"
+                                                    value="{{ $vehicle->Membership }}" required>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="ManufacturerID">Manufacturer ID:</label>
-                                                <input type="text" name="ManufacturerID" class="form-control"
-                                                    value="{{ $vehicle->ManufacturerID }}" required>
+                                                <label for="Detail_description">Detail Description:</label>
+                                                <input type="text" name="Detail_description" class="form-control"
+                                                    value="{{ $vehicle->Detail_description }}" required>
                                             </div>
                                         </div>
                                         <div class="form-group">

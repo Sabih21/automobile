@@ -16,18 +16,16 @@ class CreateVehiclesTable extends Migration
             $table->string('Model');
             $table->integer('Year');
             $table->string('Color');
-            $table->string('VIN');
-            $table->decimal('Amount');
+            $table->integer('Registration')->nullable();//new
+            $table->integer('Amount');
             $table->string('LicensePlate');
-            $table->date('PurchaseDate');
-            $table->decimal('PurchasePrice');
-            $table->decimal('CurrentValue');
+            $table->integer('Chassis');//new
             $table->string('Condition');
             $table->string('FuelType');
             $table->integer('Mileage');
             $table->string('EngineNumber');
-            $table->string('Transmission');
-            $table->string('ManufacturerID');
+            $table->string('Membership');//new
+            $table->text('Detail_description'); //new
 
             $table->timestamps();
         });

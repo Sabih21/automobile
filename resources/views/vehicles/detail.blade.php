@@ -22,8 +22,8 @@
                             {{ $vehicle->Year }}
                         </div>
                         <div class="form-group">
-                            <strong>Vin:</strong>
-                            {{ $vehicle->VIN }}
+                            <strong>Registration:</strong>
+                            {{ $vehicle->Registration }}
                         </div>
                         <div class="form-group">
                             <strong>Amount:</strong>
@@ -40,17 +40,17 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <strong>PurchaseDate:</strong>
-                            {{ $vehicle->PurchaseDate }}
+                            <strong>Chassis:</strong>
+                            {{ $vehicle->Chassis }}
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <strong>PurchasePrice:</strong>
                             {{ $vehicle->PurchasePrice }}
-                        </div>
-                        <div class="form-group">
+                        </div> --}}
+                        {{-- <div class="form-group">
                             <strong>CurrentValue:</strong>
                             {{ $vehicle->CurrentValue }}
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             <strong>Condition:</strong>
                             {{ $vehicle->Condition }}
@@ -64,12 +64,12 @@
                             {{ $vehicle->Mileage }}
                         </div>
                         <div class="form-group">
-                            <strong>EngineNumber:</strong>
-                            {{ $vehicle->EngineNumber }}
+                            <strong>Membership:</strong>
+                            {{ $vehicle->Membership }}
                         </div>
                         <div class="form-group">
-                            <strong>Transmission:</strong>
-                            {{ $vehicle->Transmission }}
+                            <strong>Detail_description:</strong>
+                            {{ $vehicle->Detail_description }}
                         </div>
                     </div>
                     <!-- Add more details as needed -->

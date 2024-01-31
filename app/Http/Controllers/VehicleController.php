@@ -38,20 +38,19 @@ class VehicleController extends Controller
             'Model' => $request->input('Model'),
             'Year' => $request->input('Year'),
             'Color' => $request->input('Color'),
-            'VIN' => $request->input('VIN'),
+            'Registration' => $request->input('Registration'),
             'Amount' => $request->input('Amount'),
             'LicensePlate' => $request->input('LicensePlate'),
-            'PurchaseDate' => $request->input('PurchaseDate'),
-            'PurchasePrice' => $request->input('PurchasePrice'),
-            'CurrentValue' => $request->input('CurrentValue'),
-            'Condition' => $request->input('Condition'),
+            'Chassis' => $request->input('Chassis'),
+            // 'PurchasePrice' => $request->input('PurchasePrice'),        
+          'Condition' => $request->input('Condition'),
             'FuelType' => $request->input('FuelType'),
             'Mileage' => $request->input('Mileage'),
             'EngineNumber' => $request->input('EngineNumber'),
-            'Transmission' => $request->input('Transmission'),
-            'ManufacturerID' => $request->input('ManufacturerID'),
+            'Membership' => $request->input('Membership'),
+            'Detail_description' => $request->input('Detail_description'),
         ]); 
-
+// dd($vehicle);
         $vehicle->save();
 
 

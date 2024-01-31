@@ -6,6 +6,8 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VehicleController;
+use App\Http\Controllers\PurchaseOrderController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    //Employees Route::
+    //->Employees Route::
     Route::prefix('/employe')->group(function () {
         Route::get('', [EmployeController::class, 'index'])->name('employe.index');
         Route::get('/create', [EmployeController::class, 'create'])->name('employe.create');
@@ -42,9 +44,6 @@ Route::middleware('auth')->group(function () {
         Route::put('/{id}', [EmployeController::class, 'update'])->name('employe.update');
         Route::delete('/delete/{id}', [EmployeController::class, 'destroy'])->name('employe.destroy');
     });
-
-    //Vehicle Route ::
-
     // Display a listing of the vehicles
     Route::get('/vehicles', [VehicleController::class, 'show'])->name('vehicles.show');
 
@@ -73,6 +72,20 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::resource('incomes', IncomeController::class);
+
+    //->Vehicles Route::
+    Route::prefix('/vehicles')->group(function () {
+        Route::get('/', [VehicleController::class, 'show'])->name('vehicles.show');
+        Route::get('/create', [VehicleController::class, 'create'])->name('vehicles.create');
+        Route::post('/', [VehicleController::class, 'store'])->name('vehicles.store');
+        Route::get('/show', [VehicleController::class, 'index'])->name('vehicles.index');
+        Route::get('/{id}/edit', [VehicleController::class, 'edit'])->name('vehicles.edit');
+        Route::put('/{id}', [VehicleController::class, 'update'])->name('vehicles.update');
+        Route::delete('/{id}', [VehicleController::class, 'destroy'])->name('vehicles.destroy');
+        Route::get('/{id}', [VehicleController::class, 'detail'])->name('vehicles.detail');
+    });
+
+    Route::resource('purchase', PurchaseOrderController::class);
 });
 
 require __DIR__ . '/auth.php';

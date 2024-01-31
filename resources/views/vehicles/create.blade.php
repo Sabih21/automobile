@@ -52,10 +52,10 @@
                                                 <input type="text" name="LicensePlate" class="form-control" required>
                                             </div>
 
-                                            <div class="form-group">
+                                            {{-- <div class="form-group">
                                                 <label for="CurrentValue">Current Value:</label>
                                                 <input type="text" name="CurrentValue" class="form-control" required>
-                                            </div>
+                                            </div> --}}
 
                                             <div class="form-group">
                                                 <label for="Condition">Condition:</label>
@@ -83,8 +83,8 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="VIN">VIN:</label>
-                                                <input type="text" name="VIN" class="form-control" required>
+                                                <label for="Registration">Registration:</label>
+                                                <input type="text" name="Registration" class="form-control" required>
                                             </div>
 
                                             <div class="form-group">
@@ -92,14 +92,10 @@
                                                 <input type="text" name="Amount" class="form-control" required>
                                             </div>
 
-                                            <div class="form-group">
-                                                <label for="PurchaseDate">Purchase Date:</label>
-                                                <input type="date" name="PurchaseDate" class="form-control" required>
-                                            </div>
 
                                             <div class="form-group">
-                                                <label for="PurchasePrice">Purchase Price:</label>
-                                                <input type="number" name="PurchasePrice" class="form-control" required>
+                                                <label for="Chasis">Chasis:</label>
+                                                <input type="number" name="Chassis" class="form-control" required>
                                             </div>
 
                                             <div class="form-group">
@@ -108,13 +104,13 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="Transmission">Transmission:</label>
-                                                <input type="text" name="Transmission" class="form-control" required>
+                                                <label for="Membership">Membership:</label>
+                                                <input type="text" name="Membership" class="form-control" required>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="ManufacturerID">Manufacturer ID:</label>
-                                                <input type="text" name="ManufacturerID" class="form-control" required>
+                                                <label for="Detail_description">Detail_description</label>
+                                                <input type="text" name="Detail_description" class="form-control" required>
                                             </div>
 
 
