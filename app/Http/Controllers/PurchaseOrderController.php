@@ -30,7 +30,7 @@ public function store(Request $request)
     $purchaseOrder->colour = $request->input('colour');
     $purchaseOrder->serial_of_reg_challan = $request->input('serial_of_reg_challan');
     $purchaseOrder->deal_locked = $request->input('deal_locked');
-
+    
     $purchaseOrder->regd_book_date = $request->input('regd_book_date');
     $purchaseOrder->regd_file_date = $request->input('regd_file_date');
     $purchaseOrder->documents_date = $request->input('documents_date');
