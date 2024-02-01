@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('expences', function (Blueprint $table) {
+        Schema::create('salary', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('expence_type_id')->constrained()->onDelete('cascade'); ;
-            $table->decimal('amount', 10, 2);
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->decimal('salary', 10, 2);
             $table->date('date');
-            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('expences');
+        Schema::dropIfExists('salary');
     }
 };

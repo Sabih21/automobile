@@ -19,7 +19,7 @@ public function store(Request $request)
     // ]);
 
     $purchaseOrder = new PurchaseOrder;
-
+    
     $purchaseOrder->membership_no = $request->input('membership_no');
     $purchaseOrder->make = $request->input('make');
     $purchaseOrder->model = $request->input('model');

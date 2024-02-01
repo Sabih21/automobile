@@ -16,9 +16,9 @@ class CreateVehiclesTable extends Migration
             $table->string('Model');
             $table->integer('Year');
             $table->string('Color');
-            $table->integer('Registration')->nullable();//new
+            $table->integer('Registration')->nullable()->unique();//new
             $table->integer('Amount');
-            $table->string('LicensePlate');
+            $table->string('LicensePlate')->unique();
             $table->integer('Chassis');//new
             $table->string('Condition');
             $table->string('FuelType');
