@@ -1,4 +1,5 @@
-<div class="modal fade" id="addExpenceModal" tabindex="-1" role="dialog" aria-labelledby="addExpenceModalLabel" aria-hidden="true">
+<div class="modal fade" id="addExpenceModal" tabindex="-1" role="dialog" aria-labelledby="addExpenceModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -13,10 +14,10 @@
                         <label for="expence_type_id">Expense Type:</label>
                         <select class="form-control" id="expence_type_id" name="expence_type_id" required>
                             @foreach ($expenseTypes as $expenseType)
-                            <option value="{{ $expenseType->id }}" {{ old('expence_type_id', isset($expense) ? $expense->expence_type_id : null) == $expenseType->id ? 'selected' : '' }}>
-                                {{ $expenseType->title }}
-                            </option>
-                            
+                                <option value="{{ $expenseType->id }}"
+                                    {{ old('expence_type_id', isset($expense) ? $expense->expence_type_id : null) == $expenseType->id ? 'selected' : '' }}>
+                                    {{ $expenseType->title }}
+                                </option>
                             @endforeach
                         </select>
 
@@ -56,7 +57,6 @@
             date: date,
             description: description
         };
-
         $.ajax({
             type: 'POST',
             url: '{{ route('expences.store') }}',

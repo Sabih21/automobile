@@ -2,7 +2,7 @@
 @section('content')
     <div class="content-wrapper">
         <div class="mt-4">
-            <h1 class="text-center pt-4">Income Detail</h1>
+            <h1 class="text-center pt-4 font-weight-bold">Income Detail</h1>
             <div class="m-4">
 
                 <div class="card">
@@ -11,18 +11,16 @@
 
                         <div class="card-tools">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addIncomeModal">
-                                Add Income
+                                Add Income 
                             </button>
                         </div>
                     </div>
-
 
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover text-nowrap">
                             <thead>
                                 <tr>
                                     <th>SNo#</th>
-                                    </th>
                                     <th>Source</th>
                                     <th>Date</th>
                                     <th>Amount</th>

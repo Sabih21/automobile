@@ -48,7 +48,7 @@
         var date = $('#editDate').val();
         var amount = $('#editAmount').val();
 
-        var data = {
+        var data = {                                    
             id: incomeId,
             source: source,
             date: date,

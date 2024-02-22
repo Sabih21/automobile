@@ -2,13 +2,14 @@
 
 @section('content')
     <div class="content-wrapper">
+        
         <div class="card">
             <div class="card-header">
                 <h1 class="card-title" style="font-size:30px; font-weight:bold;">Vehicle Details</h1>
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6">          
                         <div class="form-group">
                             <strong>Make:</strong>
                             {{ $vehicle->Make }}
@@ -21,7 +22,7 @@
                             <strong>Year:</strong>
                             {{ $vehicle->Year }}
                         </div>
-                        <div class="form-group">
+                        <div class="form-group">                                                        
                             <strong>Registration:</strong>
                             {{ $vehicle->Registration }}
                         </div>
@@ -33,7 +34,7 @@
                             <strong>Color:</strong>
                             {{ $vehicle->Color }}
                         </div>
-                        <div class="form-group">
+                        <div class="form-group">                                                                                
                             <strong>LicensePlate:</strong>
                             {{ $vehicle->LicensePlate }}
                         </div>
@@ -74,20 +75,22 @@
                     </div>
                     <!-- Add more details as needed -->
 
-                    @if ($images->count() > 0)
+                    @if ($images->count() > 0)                                                                          
                         <div id="imageCarousel" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 @foreach ($images as $key => $image)
                                     <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                                         <img src="{{ asset('storage/' . $image->image_path) }}" class="d-block"
-                                            height="150px" width="250px" alt="Vehicle Image">
+                                            height="300px" width="500px" alt="Vehicle Image">
                                     </div>
                                 @endforeach
                             </div>
+
                             <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
+
                             <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>

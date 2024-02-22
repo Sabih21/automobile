@@ -22,11 +22,11 @@
                 <div class="row">
                     <div class="col-12 col-sm-6 col-md-3">
                         <div class="info-box mb-3">
-                            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-shopping-cart"></i></span>
-
+                            <span class="info-box-icon bg-warning elevation-1">
+                                <i class="fas fa-shopping-cart"></i></span>
                             <div class="info-box-content">
-                                <span class="info-box-text">Ttoal Income</span>
-                                <span class="info-box-number">760</span>
+                                <span class="info-box-text">Total Income</span>
+                                <span class="info-box-number">{{$totalAmount}}</span>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Total Expenses</span>
-                                <span class="info-box-number">2,000</span>
+                                <span class="info-box-number">{{$totalExpence}}</span>
                             </div>
                         </div>
                     </div>

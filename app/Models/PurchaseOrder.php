@@ -36,4 +36,15 @@ class PurchaseOrder extends Model
         'owner_address',
     ];
 
+
+  // PurchaseOrder model
+  public function images()
+  {
+      return $this->hasMany(PurchaseOrderImage::class);
+  }
+
+    // public function vehicle()
+    // {
+    //     return $this->belongsTo(Vehicle::class, 'vehicle_id');
+    // }
 }

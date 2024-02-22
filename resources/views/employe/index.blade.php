@@ -6,7 +6,7 @@
 
     <div>
     
-        <h1 style="text-align: center; margin-top: 93px;">Employees Information</h1>
+        <h1 style="text-align: center; margin-top: 93px;" class="font-weight-bold">Employees Information</h1>
      <!-- /.row -->
      <div class="row justify-content-center">
         

@@ -1,6 +1,5 @@
-<!-- resources/views/expence_type/create.blade.php -->
-
-<div class="modal fade" id="addExpenseTypeModal" tabindex="-1" role="dialog" aria-labelledby="addExpenseTypeModalLabel" aria-hidden="true">
+<div class="modal fade" id="addExpenseTypeModal" tabindex="-1" role="dialog" aria-labelledby="addExpenseTypeModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -13,7 +12,7 @@
                 <form id="addExpenseTypeForm">
                     <div class="form-group">
                         <label for="title">Title:</label>
-                        <input type="text" class="form-control" id="title" name="title" required>
+                        <input type="text" name="search" class="form-control" id="title" name="title" required>
                     </div>
                 </form>
             </div>
@@ -27,8 +26,8 @@
 
 <script>
     function saveExpenseType() {
-        var title = $('#title').val();
 
+        var title = $('#title').val();
         var data = {
             title: title
         };

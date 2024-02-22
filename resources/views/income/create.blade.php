@@ -17,13 +17,13 @@
                     <div class="form-group">
                         <label for="date">Date:</label>
                         <input type="date" class="form-control" id="date" name="date" required>
-                    </div>
+                    </div>     
                     <div class="form-group">
                         <label for="amount">Amount:</label>
                         <input type="number" class="form-control" id="amount" name="amount" required>
                     </div>
                 </form>
-            </div>
+            </div>  
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary" onclick="saveIncome()">Save changes</button>
@@ -65,7 +65,7 @@
                 $('#addIncomeModal').modal('hide');
             },
             error: function(error) {
-                Swal.fire('Error!', 'Something went wrong. Please try again later.', 'error');
+                Swal.fire('Error!', 'Something went wrong. Please try again later.', 'Error');
             }
         });
 

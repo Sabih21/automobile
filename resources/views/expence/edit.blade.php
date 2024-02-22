@@ -1,4 +1,5 @@
-<div class="modal fade" id="editExpenceModal" tabindex="-1" role="dialog" aria-labelledby="editExpenceModalLabel" aria-hidden="true">
+<div class="modal fade" id="editExpenceModal" tabindex="-1" role="dialog" aria-labelledby="editExpenceModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -14,10 +15,10 @@
                         <label for="editExpenceTypeId">Expense Type1:</label>
                         <select class="form-control" id="expence_type_id" name="expence_type_id" required>
                             @foreach ($expenseTypes as $expenseType)
-                               <option value="{{ $expenseType->id }}" {{ old('expence_type_id', isset($expense) ? $expense->expence_type_id : null) == $expenseType->id ? 'selected' : '' }}>
-    {{ $expenseType->title }}
-</option>
-
+                                <option value="{{ $expenseType->id }}"
+                                    {{ old('expence_type_id', isset($expense) ? $expense->expence_type_id : null) == $expenseType->id ? 'selected' : '' }}>
+                                    {{ $expenseType->title }}
+                                </option>
                             @endforeach
                         </select>
                     </div>
@@ -44,12 +45,13 @@
 </div>
 
 <script>
-    function openEditExpenceModal(response) {
+        function openEditExpenceModal(response) {
         $('#editExpenceId').val(response.id);
         $('#editExpenceTypeId').val(response.expence_type_id);
         $('#editAmount').val(response.amount);
         $('#editDate').val(response.date);
         $('#editDescription').val(response.description);
+        
     }
 
     function updateExpence() {
@@ -87,7 +89,7 @@
                 $('#editExpenceModal').modal('hide');
             },
             error: function(error) {
-                Swal.fire('Error!', 'Something went wrong. Please try again later.', 'error');
+                Swal.fire('Wont Directly Edit because of Serious Finance Issue', 'Please delete this and add again.', 'error');
             }
         });
     }

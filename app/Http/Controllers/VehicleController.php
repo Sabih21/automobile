@@ -17,21 +17,21 @@ class VehicleController extends Controller
         return view('vehicles.index', compact('vehicle'));
 
     }
-
+   
     public function create()
     {
         return view('vehicles.create');
-    }   
+    }
 
-    
+
     public function store(Request $request)
     {
-        
-            // $request->validate([
-            //     // ... your existing validation rules
-            //     'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            // ]);
-        
+
+          //$request->validate([
+         // ... your existing validation rules
+        //   'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+       // ]);
+
 
         $vehicle = new Vehicle([
             'Make' => $request->input('Make'),
@@ -43,23 +43,22 @@ class VehicleController extends Controller
             'LicensePlate' => $request->input('LicensePlate'),
             'Chassis' => $request->input('Chassis'),
             // 'PurchasePrice' => $request->input('PurchasePrice'),        
-          'Condition' => $request->input('Condition'),
+            'Condition' => $request->input('Condition'),
             'FuelType' => $request->input('FuelType'),
             'Mileage' => $request->input('Mileage'),
             'EngineNumber' => $request->input('EngineNumber'),
             'Membership' => $request->input('Membership'),
             'Detail_description' => $request->input('Detail_description'),
-        ]); 
-// dd($vehicle);
+        ]);
+        // dd($vehicle);
         $vehicle->save();
 
 
         // Handle vehicle images
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
-                $path = $image->store('vehicle_images', 'custom'); // Use the appropriate disk name from filesystem.php
+                $path = $image->store('vehicle_images', 'custom'); 
 
-               
                 VehicleImage::create([
                     'vehicle_id' => $vehicle->VehicleID,
                     'image_path' => $path,
@@ -68,74 +67,82 @@ class VehicleController extends Controller
 
             }
         }
-        
 
-      
-        return redirect()->route('vehicles.index');
-     }
+        return redirect()->route('vehicles.index')->with('message','The Vehicle Added Sucessfully');
+    }
 
-     public function edit($id)
-     {
-         $vehicle = vehicle::findOrFail($id);
-         $images = $vehicle->images; 
-         return view('vehicles.edit', compact('vehicle' ,'images'));
-     }
- 
-     public function update(Request $request, $id)
-     {
-         $vehicle = Vehicle::findOrFail($id);
-     
-       
-         $vehicle->update($request->all());
-     
-       
-         if ($request->hasFile('images')) {
-             
-             $vehicle->images()->delete();
-     
+
+
+    // public function getDetails($id)
+    // {
+    //     // Fetch details of the selected vehicle by ID
+    //     $vehicle = Vehicle::find($id);
+
+    //     // Return the details as JSON
+    //     return response()->json($vehicle);
+    // }
+
+
+    public function edit($id)
+    {
+        $vehicle = vehicle::findOrFail($id);
+        $images = $vehicle->images;
+        return view('vehicles.edit', compact('vehicle', 'images'));
+    }
+
+    public function update(Request $request, $id)
+    {
+
+        $vehicle = Vehicle::findOrFail($id);
+
+        $vehicle->update($request->all());
+
+        if ($request->hasFile('images')) {
             
-             foreach ($request->file('images') as $image) {
-                 $path = $image->store('vehicle_images', 'custom');
-     
-                 VehicleImage::create([
-                     'vehicle_id' => $vehicle->VehicleID,
-                     'image_path' => $path,
-                 ]);
-             }
-         }
-     
-         return redirect()->route('vehicles.index')->with('success', 'Vehicle updated successfully');
-     }
-       
-     public function show()
-     {
-         // Fetch all vehicles
-         $vehicles = Vehicle::all();
-     
-         // Eager load images to avoid N+1 problem
-         $vehicles->load('images');
-     
-         return view('vehicles.show', compact('vehicles'));
-     }
-    
-     public function detail($id): View
-     {
-         $vehicle = Vehicle::findOrFail($id);
-         $images = $vehicle->images; 
+            $vehicle->images()->delete();
 
-         return view('vehicles.detail', compact('vehicle' ,'images'));
-     }
- 
-     public function destroy($id)
-     {
-         $vehicle = Vehicle::findOrFail($id);
-         $vehicle->images()->delete();
+            foreach ($request->file('images') as $image) {
+                $path = $image->store('vehicle_images', 'custom');
 
-         $vehicle->delete();
-     
-         return redirect()->route('vehicles.index')
-             ->with('success', 'Vehicle deleted successfully');
-     }
+                VehicleImage::create([
+                    'vehicle_id' => $vehicle->VehicleID,
+                    'image_path' => $path,
+                ]);
+            }
+        }
 
-   
+        return redirect()->route('vehicles.index')->with('success', 'Vehicle updated successfully');
+    }
+
+    public function show()
+    {
+        // Fetch all vehicles
+        $vehicles = Vehicle::all();
+
+        // Eager load images to avoid N+1 problem
+        $vehicles->load('images');
+
+        return view('vehicles.show', compact('vehicles'));
+    }
+
+    public function detail($id): View
+    {
+        $vehicle = Vehicle::findOrFail($id);
+        $images = $vehicle->images;
+
+        return view('vehicles.detail', compact('vehicle', 'images'));
+    }
+
+    public function destroy($id)
+    {
+        $vehicle = Vehicle::findOrFail($id);
+        $vehicle->images()->delete();
+
+        $vehicle->delete();
+
+        return redirect()->route('vehicles.index')
+            ->with('success', 'Vehicle deleted successfully');
+    }
+
+
 };

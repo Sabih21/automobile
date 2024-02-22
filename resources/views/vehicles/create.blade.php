@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-sm-8 text-center my-auto">
-                        <h1>Add Vehicle</h1>
+                        <h1 class="font-weight-bold">Add Vehicle</h1>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -110,7 +110,8 @@
 
                                             <div class="form-group">
                                                 <label for="Detail_description">Detail_description</label>
-                                                <input type="text" name="Detail_description" class="form-control" required>
+                                                <input type="text" name="Detail_description" class="form-control"
+                                                    required>
                                             </div>
 
 

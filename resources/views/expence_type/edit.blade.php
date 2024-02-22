@@ -1,4 +1,3 @@
-<!-- resources/views/expence_type/edit.blade.php -->
 
 <div class="modal fade" id="editExpenseTypeModal" tabindex="-1" role="dialog" aria-labelledby="editExpenseTypeModalLabel"
     aria-hidden="true">

@@ -4,29 +4,27 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 class CreateVehiclesTable extends Migration
-{   
-
-    
+{
 
     public function up()
     {
         Schema::create('vehicles', function (Blueprint $table) {
+
             $table->id('VehicleID');
             $table->string('Make');
             $table->string('Model');
             $table->integer('Year');
             $table->string('Color');
-            $table->integer('Registration')->nullable()->unique();//new
+            $table->integer('Registration')->nullable()->unique(); 
             $table->integer('Amount');
             $table->string('LicensePlate')->unique();
-            $table->integer('Chassis');//new
+            $table->integer('Chassis'); 
             $table->string('Condition');
             $table->string('FuelType');
             $table->integer('Mileage');
             $table->string('EngineNumber');
-            $table->string('Membership');//new
-            $table->text('Detail_description'); //new
-
+            $table->string('Membership');
+            $table->text('Detail_description'); 
             $table->timestamps();
         });
     }
@@ -35,4 +33,5 @@ class CreateVehiclesTable extends Migration
     {
         Schema::dropIfExists('vehicles');
     }
-};
+}
+;

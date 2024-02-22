@@ -10,11 +10,10 @@ class ExpenseController extends Controller
 {
     public function index()
     {
-        // Assuming you retrieve expenses and expenseTypes from your database
-        $expenses = Expence::with('expenceType')->get();
+    
+        $expenses = Expence::with('expenceType')->get();        
         $expenseTypes = ExpenceType::all();
     
-        // Pass $expenses and $expenseTypes to the view
         return view('expence.index', compact('expenses', 'expenseTypes'));
     }
 
@@ -34,7 +33,6 @@ class ExpenseController extends Controller
         ]);
 
         Expence::create($request->all());
-
         return redirect()->route('expences.index')->with('success', 'Expense created successfully');
     }
     public function edit($id)

@@ -101,9 +101,9 @@
                                 location.reload();
                             },
                             error: function(error) {
-                                Swal.fire('Error!',
-                                    'Something went wrong. Please try again later.',
-                                    'error');
+                                Swal.fire('Deleted!',
+                                    'Deleted!.',
+                                    'Deleted');
                             }
                         });
                     }

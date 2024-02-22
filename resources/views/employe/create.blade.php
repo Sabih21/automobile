@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <div class="row justify-content-center align-items-center">
           <div class="col-sm-8 text-center my-auto">
-            <h1>Add Employees</h1>
+            <h1 class="font-weight-bold">Add Employees</h1>
           </div>
           
         </div>

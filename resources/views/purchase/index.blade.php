@@ -29,6 +29,11 @@
                                 <th>Chassis #</th>
                                 <th>Color</th>
                                 <th>Deal Lock Amount</th>
+                                <th>Car Image</th>
+                                <th>CPLC Image</th>
+                                <th>Vehicle/Document Image</th>
+                                <th>Seller CNIC Image</th>
+                                <th>Buyer CNIC Image</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -45,9 +50,35 @@
                                     <td>{{ $purchaseOrder->colour }}</td>
                                     <td>{{ $purchaseOrder->deal_locked }}</td>
                                     <td>
-                                        <a href="{{ route('purchase_orders.show', $purchaseOrder->id) }}" class="btn btn-info btn-sm">View</a>
-                                        <a href="{{ route('purchase_orders.edit', $purchaseOrder->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                        <form action="{{ route('purchase_orders.destroy', $purchaseOrder->id) }}" method="POST" style="display: inline-block;">
+                                        @foreach($purchaseOrder->images->where('type', 'car') as $image)
+                                            <img src="{{ asset('storage/' . $image->path) }}" alt="Car Image" style="max-width: 100px; max-height: 100px;">
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @foreach($purchaseOrder->images->where('type', 'cplc') as $image)
+                                            <img src="{{ asset('storage/' . $image->path) }}" alt="CPLC Image" style="max-width: 100px; max-height: 100px;">
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @foreach($purchaseOrder->images->where('type', 'vehicle') as $image)
+                                            <img src="{{ asset('storage/' . $image->path) }}" alt="Vehicle Image" style="max-width: 100px; max-height: 100px;">
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @foreach($purchaseOrder->images->where('type', 'seller_cnic') as $image)
+                                            <img src="{{ asset('storage/' . $image->path) }}" alt="Seller CNIC Image" style="max-width: 100px; max-height: 100px;">
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @foreach($purchaseOrder->images->where('type', 'buyer_cnic') as $image)
+                                        <img src="{{ asset('storage/' . $image->path) }}" alt="Buyer CNIC Image" style="max-width: 100px; max-height: 100px;">
+                                        @endforeach
+                                    </td>
+                                    
+                                    <td>
+                                        {{-- <a href="{ route('purchase.show', $purchaseOrder->id) }}" class="btn btn-info btn-sm">View</a> --}}
+                                        <a href="{{ route('purchase.edit', $purchaseOrder->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                        <form action="{{ route('purchase.destroy', $purchaseOrder->id) }}" method="POST" style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this purchase order?')">Delete</button>

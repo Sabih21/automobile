@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('expences', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('expence_type_id')->constrained()->onDelete('cascade'); ;
+            $table->foreignId('expence_type_id')->constrained()->onDelete('cascade'); 
             $table->decimal('amount', 10, 2);
             $table->date('date');
             $table->text('description')->nullable();

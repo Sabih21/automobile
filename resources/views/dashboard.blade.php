@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Mehak Automotive Dashboard</h1>
+                        <h1 class="m-0 text-dark" style="font-weight: bold">Mehak Automotive Dashboard</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -32,7 +32,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Sales</span>
-                                <span class="info-box-number">760</span>
+                                <span class="info-box-number">{{ $totalAmount }}</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -60,7 +60,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Stock</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-number"> {{ $total_vehicle }}</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -68,7 +68,6 @@
                     </div>
                     <!-- /.col -->
 
-                    <!-- fix for small devices only -->
                     <div class="clearfix hidden-md-up"></div>
 
                     <div class="col-12 col-sm-6 col-md-3">
@@ -77,7 +76,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Purchases</span>
-                                <span class="info-box-number">760</span>
+                                <span class="info-box-number">{{ $total_purchase }}</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -90,7 +89,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Expenses</span>
-                                <span class="info-box-number">2,000</span>
+                                <span class="info-box-number">{{ $totalExpence }}</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -614,8 +613,8 @@
                                         <tbody>
                                             <tr>
                                                 <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                                                <td>Call of Duty IV</td>
-                                                <td><span class="badge badge-success">Shipped</span></td>
+                                                <td>Call of Duty IVtd>
+                                                <td><span class="bad</ge badge-success">Shipped</span></td>
                                                 <td>
                                                     <div class="sparkbar" data-color="#00a65a" data-height="20">
                                                         90,80,90,-70,61,-83,63</div>

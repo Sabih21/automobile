@@ -1,4 +1,3 @@
-<!-- resources/views/expence_type/index.blade.php -->
 
 @extends('layouts.app')
 
@@ -58,7 +57,6 @@
         </div>
     </div>
 
-    <!-- Include scripts section -->
     @section('scripts')
         @include('expence_type.create')
         @include('expence_type.edit')

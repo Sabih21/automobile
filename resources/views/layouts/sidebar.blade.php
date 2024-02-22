@@ -3,9 +3,9 @@
     <a href="{{ route('dashboard') }}" class="brand-link">
         <img src="/images/logo.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
         <span class="brand-text font-weight-solid" style="color: rgb(230, 36, 36); font-weight: bold">Mehak
-            Automotive</span>
+            Automobile
+        </span>
     </a>
-
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
@@ -15,7 +15,7 @@
             </div>
             <div class="info">
                 <a href="#" class="d-block"
-                    style="color: rgb(228, 38, 38); font-weight: bold">{{ auth()->user()->name }}</a>
+                    style="color: rgb(228, 38, 38); font-weight: bold">{{ auth()->user()->f_name }}</a>
             </div>
         </div>
         <!-- Sidebar Menu -->
@@ -25,7 +25,8 @@
                 <!-- Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library -->
                 <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                    <a href="{{ url('dashboard') }}"
+                        class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -33,13 +34,12 @@
                         </p>
                     </a>
 
-
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
-                            Employee
+                            Employee/Customers
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -54,6 +54,13 @@
                             <a href="{{ route('employe.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Employees</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('customers.index') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Customers</p>
                             </a>
                         </li>
 
@@ -87,6 +94,18 @@
                                 <p>Vehicles Information</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('modifications.create') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Modification</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('modifications.index') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Vehicles Modification</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
@@ -99,49 +118,93 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('purchase.create')}}" class="nav-link">
+                            <a href="{{ route('purchase.create') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Puchase Order</p>
+                                <p>Add Puchase Order</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{url('purchase.index')}}" class="nav-link">
+                            <a href="{{ route('purchase.show') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Purchases</p>
                             </a>
                         </li>
-                        {{-- <li class="nav-item">
-                            <a href="pages/charts/inline.html" class="nav-link">
+                        <li class="nav-item">
+                            <a href="{{ route('purchase.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Inline</p>
+                                <p>All Purchases Info</p>
                             </a>
-                        </li> --}}
+                        </li>
                     </ul>
                 </li>
+                
+                                <li class="nav-item has-treeview">
+                                    <a href="#" class="nav-link">
+                                        <i class="nav-icon fas fa-comment-dollar"></i>
+                                        <p>
+                                            Sales
+                                            <i class="fas fa-angle-left right"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{{ url('sales') }}" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Sales</p>
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="{{ route('sales.create') }}" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Add Sale</p>
+                                            </a>
+                                        </li>
+                
+                                        <li class="nav-item">
+                                            <a href="{{ route('sales.index') }}" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Sales</p>
+                                            </a>
+                                        </li>
+                
+                                    </ul>
+                                </li>
+
+                                
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tree"></i>
                         <p>
-                            Installments
+                            Expenses/Incomes
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-
                         <li class="nav-item">
-                            <a href="pages/UI/timeline.html" class="nav-link">
+                            <a href="{{ url('expences') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p></p>
+                                <p>Add Expences</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/UI/ribbons.html" class="nav-link">
+                            <a href="{{ route('expence_types.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Ribbons</p>
+                                <p>Add Expence Type</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('incomes.index') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Incomes</p>
                             </a>
                         </li>
                     </ul>
                 </li>
+
+
+
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
@@ -157,31 +220,15 @@
                                 <p>Income</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/forms/advanced.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Advanced Elements</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/forms/editors.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Editors</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/forms/validation.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Validation</p>
-                            </a>
-                        </li>
+
+
                     </ul>
                 </li>
 
                 <li class="nav-header">Finance</li>
                 <li class="nav-item">
                     <a href="{{ route('accounts.index') }}"
-                        class="nav-link {{ request()->route()->named('accounts.index')? 'active': '' }}">
+                        class="nav-link {{ request()->route()->named('accounts.index') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-calendar-alt"></i>
                         <p>
                             Accounts
@@ -189,100 +236,29 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Gallery
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-envelope"></i>
-                        <p>
-                            Mailbox
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/mailbox/mailbox.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Inbox</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/mailbox/compose.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Compose</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/mailbox/read-mail.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Read</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
-                            Pages
+                            Roles
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/examples/invoice.html" class="nav-link">
+                            <a href="{{ url('/admin/roles') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Invoice</p>
+                                <p>Roles</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/examples/profile.html" class="nav-link">
+                            <a href="{{ url('/admin/permissions') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Profile</p>
+                                <p>Permissions</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/e-commerce.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>E-commerce</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/projects.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Projects</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/project-add.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Project Add</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/project-edit.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Project Edit</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/project-detail.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Project Detail</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/contacts.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Contacts</p>
-                            </a>
-                        </li>
+
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">

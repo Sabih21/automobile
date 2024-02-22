@@ -13,16 +13,16 @@ class IncomeController extends Controller
      */
     public function index()
     {
-        $incomes =  Income::paginate(10);
+        $incomes = Income::paginate(10);
         return view('income.index', compact('incomes'));
     }
 
-    /**
+        /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+     
     }
 
     /**
@@ -53,7 +53,7 @@ class IncomeController extends Controller
      */
     public function show(string $id)
     {
-        //
+
     }
 
     /**
@@ -61,7 +61,7 @@ class IncomeController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
     }
 
     /**
